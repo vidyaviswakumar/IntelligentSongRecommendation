@@ -115,7 +115,7 @@ db.triplets_new.aggregate(
    db.songsfiltered.insert(db.songs_dataset.aggregate([ { $match: { Year: {$gt : 2008} } }]));
    -----------------------------------------------------------------------
    
-   //final trending songs_collection that u hAE TO USE
+   //final trending songs_collection 
    db.trending_songs.aggregate(
 [
      {$lookup: {from: "songsfiltered", localField: "_id", foreignField: "Song_id", as: "trending_songs_filtered_year"}},   
@@ -127,7 +127,7 @@ db.triplets_new.aggregate(
 
 7.	Spring App
 Finally, our application is deployed in our springApp where we integrate all our modules.
-It eill take input from user in the form of text and smileys and predict user mood.
+It will take input from user in the form of text and smileys and predict user mood.
 
 Get Mahout Recommendations for that user from MongoDb and give playlists to user.
 •	Playlist 1: Might cheer you up (Mahout Recommendations + Mood + Trending)
@@ -149,3 +149,5 @@ https://mvnrepository.com/artifact/com.ibm.watson.developer_cloud/tone-analyzer
 Gson Dependency
 https://mvnrepository.com/artifact/com.google.code.gson/gson
 	
+DropBoxLink: For entire code with dataset
+https://www.dropbox.com/s/yg94zv2r1746ois/DataSense-BigDataProject.zip?dl=0
